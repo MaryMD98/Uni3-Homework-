@@ -45,23 +45,32 @@ var uppercaseChar = window.confirm("Click OK to confirm including uppercase char
 // function will generate password based on user criteria.
 // will return password value
 function generatePassword(){
-  // check if there is entry and if number is between 8 and 128
-  if(!sizeOfPassword){
-    window.alert("Invalid Entry - Please Choose a Number");
-    return;
-  } else if (sizeOfPassword < 8 || sizeOfPassword > 128){
-    window.alert("Invalid Entry - Please Choose a Number between 8 and 128");
-    return;
-  } else {
-    stringSize = sizeOfPassword;
-  }
+    // check if there is entry from user
+    if(!sizeOfPassword){
+      window.alert("Invalid Entry - Please Choose a Number");
+      return;
 
-  for(){
-    
-  }
-  randomOption();
+    // check if number is between 8 and 128
+    } else if (sizeOfPassword < 8 || sizeOfPassword > 128){
+      window.alert("Invalid Entry - Please Choose a Number between 8 and 128");
+      return;
 
-  return randomStringCreated;
+    // check if user wrote no on the 4 questions
+    } else if (!specialChar && !numChar && !lowercaseChar && !uppercaseChar){
+      window.alert("Invalid Entry - Please Choose an Option to create the password");
+      return;
+
+    // everything good, run program 
+    } else {
+
+      // run for loops to add one letter at a time to string up to size of pasword chosen by user
+      for(var i = 0; i < sizeOfPassword; i++){
+        randomOption();
+      }
+    }
+
+    // return string created
+    return randomStringCreated;
 }
 
   
@@ -79,6 +88,7 @@ function randomOption (){
       //get another random number to get a letter on the special char array
       stringRandomIndex = Math.floor(Math.random() * 21);
       randomStringCreated = randomStringCreated.concat(specialCharacter[stringRandomIndex]);
+      return;
     } else {
       // if user did not selected this option run function again
       randomOption();
@@ -91,6 +101,7 @@ function randomOption (){
       //get another random number to get a letter on the number char array
       stringRandomIndex = Math.floor(Math.random() * 9);
       randomStringCreated = randomStringCreated.concat(numberString[stringRandomIndex]);
+      return;
     } else {
       // if user did not selected this option run function again
       randomOption();
@@ -103,6 +114,7 @@ function randomOption (){
       //get another random number to get a letter on the letter char array
       stringRandomIndex = Math.floor(Math.random() * 25);
       randomStringCreated = randomStringCreated.concat(letterString[stringRandomIndex]);
+      return;
     } else {
       // if user did not selected this option run function again
       randomOption();
@@ -119,6 +131,7 @@ function randomOption (){
       lowercase = letterString[stringRandomIndex];
       lowercase = lowercase.toUpperCase();
       randomStringCreated = randomStringCreated.concat(lowercase);
+      return;
     } else {
       // if user did not selected this option run function again
       randomOption();
