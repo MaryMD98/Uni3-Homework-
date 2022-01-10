@@ -1,4 +1,4 @@
-# Homework unit Three:
+# Homework Unit Three:
 # JavaScript: Password Generator
 
 ## Description of the homework:
