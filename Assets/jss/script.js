@@ -11,6 +11,13 @@ var specialCharacter = ["~","!","@","#","$","%","^","&","*","(",")","-","=",
                         "+","<",">","?","/","[","]","{","}"];
 
 var generateBtn = document.querySelector("#generate");
+
+var sizeOfPassword;
+var specialChar;
+var numChar;
+var lowercaseChar;
+var uppercaseChar;
+
 var randomStringCreated = "";
 var randomOptIndex = 0;
 var stringRandomIndex = 0;
@@ -23,28 +30,29 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// How many characters would you like your password to contain?
-// window will ask for user input and bbutton choise to cancel and ok
-// character of 8 to 128 size long
-var sizeOfPassword = window.prompt("How many characters would you like your password to contain?");
-
-// Click OK to confirm including sprecial characters.
-//promp includes cancel and ok buttons
-var specialChar = window.confirm("Click OK to confirm including sprecial characters.");
-
-// click ok to confirm including numeric characters.
-var numChar = window.confirm("Click OK to confirm including numeric characters.");
-
-// click OK to confirm including lowercase characters.
-var lowercaseChar = window.confirm("Click OK to confirm including lowercase characters.");
-
-// click OK to confirm including uppercase characters.
-var uppercaseChar = window.confirm("Click OK to confirm including uppercase characters.");
-
 // after all this is has been responded, then password shows in page
 // function will generate password based on user criteria.
 // will return password value
 function generatePassword(){
+
+// How many characters would you like your password to contain?
+// window will ask for user input and bbutton choise to cancel and ok
+// character of 8 to 128 size long
+sizeOfPassword = window.prompt("How many characters would you like your password to contain?");
+
+// Click OK to confirm including sprecial characters.
+//promp includes cancel and ok buttons
+specialChar = window.confirm("Click OK to confirm including sprecial characters.");
+
+// click ok to confirm including numeric characters.
+numChar = window.confirm("Click OK to confirm including numeric characters.");
+
+// click OK to confirm including lowercase characters.
+lowercaseChar = window.confirm("Click OK to confirm including lowercase characters.");
+
+// click OK to confirm including uppercase characters.
+uppercaseChar = window.confirm("Click OK to confirm including uppercase characters.");
+
     // check if there is entry from user
     if(!sizeOfPassword){
       window.alert("Invalid Entry - Please Choose a Number");
@@ -73,7 +81,6 @@ function generatePassword(){
     return randomStringCreated;
 }
 
-  
   // first check what string Array to use then check random and a pull letter from string
   // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
   // letterString   numberString   specialCharacter      arrays
