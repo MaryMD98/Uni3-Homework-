@@ -1,16 +1,18 @@
-// Assignment Code
+// Assignment Code 
 
 // Array of letters, numbers and special char to use to create password
 // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
-var randomString = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
-                    "n","o","p","q","r","s","t","u","v","w","x","y","z",
-                    "0","1","2","3","4","5","6","7","8","9",
-                    "~","!","@","#","$","%","^","&","*","(",")","-","=",
+var letterString = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
+                    "n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var numberString = ["0","1","2","3","4","5","6","7","8","9"];
+
+var specialChar = ["~","!","@","#","$","%","^","&","*","(",")","-","=",
                     "+","<",">","?","/","[","]","{","}"];
 
 var generateBtn = document.querySelector("#generate");
-var randomIndex = 0;
-var stringSize = 0;
+var randomOptIndex = 0;
+var stringRandomIndex = 0;
 
 // Write password to the #password input
 function writePassword() {
@@ -52,6 +54,9 @@ function generatePassword(){
   } else {
     stringSize = sizeOfPassword;
   }
+
+
+  
 
 
   //first random will choose between 0 - 0 if everything is selected
@@ -107,21 +112,43 @@ function generatePassword(){
 
       }
   }
+}
 
+      // if 0 special 
+      // if 1 Number 
+      // if 2 lower 
+      // if 3 upper 
+      // randomOptIndex = 0;
+      // stringRandomIndex = 0;
+  //letterString numberString specialChar arrays
+
+  // first check what string Array to use
   // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
+function randomOption (){
+  randomOptIndex = Math.floor(Math.random() * 3);
+  
+  if(randomOptIndex == 0){
+    //check if user is true on adding specialchar else run function again
+    if()
+
+  }
+  if(randomOptIndex == 1){
+
+  }
+  if(randomOptIndex == 2){
+
+  }
+  if(randomOptIndex == 3){
+
+  }
+}
+
+  
   // 4 different functions depending on user entry
   // true and true only include specil nd numbers
   function specialANDnumchar (){
 
     if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
-      randomIndex = Math.floor(Math.random() * 3);
-
-      if 0 special 
-      if 1 Number 
-      if 2 lower 
-      if 3 upper 
-
-
     } else if(lowercaseChar && !uppercaseChar){ // true and false only include lowercases
     } else if(!lowercaseChar && uppercaseChar){ // false and true only include uppercase
     } else { // false and false dont include letters
@@ -155,7 +182,7 @@ function generatePassword(){
 
   
     return 
-  }
+  
 
 
 generateBtn.addEventListener("click", writePassword);
