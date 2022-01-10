@@ -91,11 +91,36 @@ function randomOption (){
       randomOption();
     }
 
-  }
-  if(randomOptIndex == 2){
+  // add Letter with lowercase character to string
+  } else if(randomOptIndex == 2){
+     //check if user is true on adding lowercase letters else run function again
+     if(lowercaseChar == true){
+      //get another random number to get a letter on the letter char array
+      var lowercase = "";
+      stringRandomIndex = Math.floor(Math.random() * 25);
+      lowercase = letterString[stringRandomIndex];
+      lowercase = lowercase.toUpperCase();
+      randomStringCreated = randomStringCreated.concat(lowercase);
+    } else {
+      // if user did not selected this option run function again
+      randomOption();
+    }
 
   }
   if(randomOptIndex == 3){
+
+    //check if user is true on adding lowercase letters else run function again
+    if(lowercaseChar == true){
+      //get another random number to get a letter on the letter char array
+      var lowercase = "";
+      stringRandomIndex = Math.floor(Math.random() * 25);
+      lowercase = letterString[stringRandomIndex];
+      lowercase = lowercase.toUpperCase();
+      randomStringCreated = randomStringCreated.concat(lowercase);
+    } else {
+      // if user did not selected this option run function again
+      randomOption();
+    }
 
   }
 }
