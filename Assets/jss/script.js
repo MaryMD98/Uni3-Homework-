@@ -42,7 +42,7 @@ sizeOfPassword = window.prompt("How many characters would you like your password
 
 // Click OK to confirm including sprecial characters.
 //promp includes cancel and ok buttons
-specialChar = window.confirm("Click OK to confirm including sprecial characters.");
+specialChar = window.confirm("Click OK to confirm including special characters.");
 
 // click ok to confirm including numeric characters.
 numChar = window.confirm("Click OK to confirm including numeric characters.");
@@ -82,18 +82,18 @@ uppercaseChar = window.confirm("Click OK to confirm including uppercase characte
 }
 
   // first check what string Array to use then check random and a pull letter from string
-  // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
+  // (1)specialChar , (2)numChar ,  (3)lowercaseChar , (4)uppercaseChar
   // letterString   numberString   specialCharacter      arrays
   // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
 function randomOption (){
-  randomOptIndex = Math.floor(Math.random() * 3);
+  randomOptIndex = Math.floor(Math.random() * 4);
   
   // add special character to string
-  if(randomOptIndex == 0){
+  if(randomOptIndex == 1){
     //check if user is true on adding specialchar else run function again
     if(specialChar == true){
       //get another random number to get a letter on the special char array
-      stringRandomIndex = Math.floor(Math.random() * 21);
+      stringRandomIndex = Math.floor(Math.random() * 22);
       randomStringCreated = randomStringCreated.concat(specialCharacter[stringRandomIndex]);
       return;
     } else {
@@ -102,11 +102,11 @@ function randomOption (){
     }
     
   // add Number character to string
-  } else if(randomOptIndex == 1){
+  } else if(randomOptIndex == 2){
     //check if user is true on adding numberChar else run function again
     if(numChar == true){
       //get another random number to get a letter on the number char array
-      stringRandomIndex = Math.floor(Math.random() * 9);
+      stringRandomIndex = Math.floor(Math.random() * 10);
       randomStringCreated = randomStringCreated.concat(numberString[stringRandomIndex]);
       return;
     } else {
@@ -115,11 +115,11 @@ function randomOption (){
     }
 
   // add Letter with lowercase character to string
-  } else if(randomOptIndex == 2){
+  } else if(randomOptIndex == 3){
      //check if user is true on adding lowercase letters else run function again
      if(lowercaseChar == true){
       //get another random number to get a letter on the letter char array
-      stringRandomIndex = Math.floor(Math.random() * 25);
+      stringRandomIndex = Math.floor(Math.random() * 26);
       randomStringCreated = randomStringCreated.concat(letterString[stringRandomIndex]);
       return;
     } else {
@@ -127,14 +127,14 @@ function randomOption (){
       randomOption();
     }
 
-  //  randomOptIndex == 3  ->  add Letter with Uppercase character to string, 
+  //  randomOptIndex == 4  ->  add Letter with Uppercase character to string, 
   } else {
     //check if user is true on adding uppercase letters else run function again
     if(uppercaseChar == true){
       //get another random number to get a letter on the letter char array
       var lowercase = "";
 
-      stringRandomIndex = Math.floor(Math.random() * 25);
+      stringRandomIndex = Math.floor(Math.random() * 26);
       lowercase = letterString[stringRandomIndex];
       lowercase = lowercase.toUpperCase();
       randomStringCreated = randomStringCreated.concat(lowercase);
