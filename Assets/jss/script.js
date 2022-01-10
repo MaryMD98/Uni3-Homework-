@@ -53,13 +53,10 @@ function generatePassword(){
     stringSize = sizeOfPassword;
   }
 
-  //check if everything is selected
+
   //first random will choose between 0 - 0 if everything is selected
   // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
-  if(specialChar && numChar && lowercaseChar && uppercaseChar){
-
-  }
-
+ 
   //check if lower or uppercase, if false on both only display nonaalphabet num
   // if true and true
   if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
@@ -70,37 +67,79 @@ function generatePassword(){
 
       } else if(!specialChar && numChar){ // false and true only include numbers
       
-      } else { // false and false only include letters
+      } else { // false and false only include letters upper and lower
 
       }
 
-  } if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
+  } else if(lowercaseChar && !uppercaseChar){ // true and false only include lowercases
    
-    if(specialChar && numChar){  // true and true include everthing
+      if(specialChar && numChar){  // true and true include everthing
 
-    } else if(specialChar && !numChar){ // true and false only include especial char
+      } else if(specialChar && !numChar){ // true and false only include especial char
 
-    } else if(!specialChar && numChar){ // false and true only include numbers
-    
-    } else { // false and false only include letters
+      } else if(!specialChar && numChar){ // false and true only include numbers
+      
+      } else { // false and false only include  lowercase letters
 
-    }
+      }
 
-} if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
-   
-  if(specialChar && numChar){  // true and true include everthing
+  } else if(!lowercaseChar && uppercaseChar){ // false and true only include uppercase
+      
+      if(specialChar && numChar){  // true and true include everthing
 
-  } else if(specialChar && !numChar){ // true and false only include especial char
+      } else if(specialChar && !numChar){ // true and false only include especial char
 
-  } else if(!specialChar && numChar){ // false and true only include numbers
-  
-  } else { // false and false only include letters
+      } else if(!specialChar && numChar){ // false and true only include numbers
+      
+      } else { // false and false only include uppercase letters
 
+      }
+
+  } else { // false and false dont include letters
+      
+      if(specialChar && numChar){  // true and true only include specil nd numbers
+
+      } else if(specialChar && !numChar){ // true and false only include especial char
+
+      } else if(!specialChar && numChar){ // false and true only include numbers
+      
+      } else { // false error, dont include anything
+
+      }
   }
 
-}
+  // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
+  // 4 different functions depending on user entry
+  // true and true only include specil nd numbers
+  function specialANDnumchar (){
 
-  
+    if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
+      randomIndex = Math.floor(Math.random() * 3);
+
+      if 0 special 
+      if 1 Number 
+      if 2 lower 
+      if 3 upper 
+
+
+    } else if(lowercaseChar && !uppercaseChar){ // true and false only include lowercases
+    } else if(!lowercaseChar && uppercaseChar){ // false and true only include uppercase
+    } else { // false and false dont include letters
+    }
+  }
+
+  // true and false only include especial char
+  function specialCharacter (){
+
+  }
+  // false and true only include numbers
+  function numCharacter (){
+
+  }
+  // false and false 
+  function onlyLetters (){
+
+  }
 
   // create random numbers and between 0 - 57
   // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
