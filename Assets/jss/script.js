@@ -11,6 +11,7 @@ var specialChar = ["~","!","@","#","$","%","^","&","*","(",")","-","=",
                     "+","<",">","?","/","[","]","{","}"];
 
 var generateBtn = document.querySelector("#generate");
+var randomStringCreated = "";
 var randomOptIndex = 0;
 var stringRandomIndex = 0;
 
@@ -114,22 +115,30 @@ function generatePassword(){
   }
 }
 
-      // if 0 special 
-      // if 1 Number 
-      // if 2 lower 
-      // if 3 upper 
+  
+      // specialChar  numChar lowercaseChar uppercaseChar
       // randomOptIndex = 0;
       // stringRandomIndex = 0;
-  //letterString numberString specialChar arrays
+  
 
-  // first check what string Array to use
+  // first check what string Array to use then check random and a pull letter from string
   // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
+  // letterString   numberString   specialChar      arrays
+  // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
 function randomOption (){
   randomOptIndex = Math.floor(Math.random() * 3);
   
+  // add special character to string
   if(randomOptIndex == 0){
     //check if user is true on adding specialchar else run function again
-    if()
+    if(specialChar == true){
+      //get another random number to get a letter on the special char array
+      stringRandomIndex = Math.floor(Math.random() * 3);
+      randomStringCreated = randomStringCreated.concat(specialChar[stringRandomIndex]);
+
+    } else {
+      randomOption();
+    }
 
   }
   if(randomOptIndex == 1){
