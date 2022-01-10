@@ -1,6 +1,7 @@
 // Assignment Code
 
 // Array of letters, numbers and special char to use to create password
+// letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
 var randomString = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
                     "n","o","p","q","r","s","t","u","v","w","x","y","z",
                     "0","1","2","3","4","5","6","7","8","9",
@@ -8,7 +9,8 @@ var randomString = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
                     "+","<",">","?","/","[","]","{","}"];
 
 var generateBtn = document.querySelector("#generate");
-var index = 0;
+var randomIndex = 0;
+var stringSize = 0;
 
 // Write password to the #password input
 function writePassword() {
@@ -40,8 +42,35 @@ var uppercaseChar = window.confirm("Click OK to confirm including uppercase char
 // function will generate password based on user criteria.
 // will return password value
 function generatePassword(){
-  // create random numbers and match it to the randomString
-    index = Math.floor(Math.random() * randomString.length);
+  // check if there is entry and if number is between 8 and 128
+  if(!sizeOfPassword){
+    window.alert("Invalid Entry - Please Choose a Number");
+    return;
+  } else if (sizeOfPassword < 8 || sizeOfPassword > 128){
+    window.alert("Invalid Entry - Please Choose a Number between 8 and 128");
+    return;
+  } else {
+    stringSize = sizeOfPassword;
+  }
+
+  //check if everything is selected
+  if(specialChar && numChar && lowercaseChar && uppercaseChar){
+
+  }
+
+  //first random will chose between 
+  // create random numbers and between 0 - 57
+  // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
+  // specialChar , numChar ,  lowercaseChar , uppercaseChar
+  randomIndex = Math.floor(Math.random() * 57);
+
+    // specialChar , numChar ,  lowercaseChar , uppercaseChar
+    randomIndex = Math.floor(Math.random() * 57);
+
+      // specialChar , numChar ,  lowercaseChar , uppercaseChar
+  randomIndex = Math.floor(Math.random() * 57);
+
+
   
     return 
   }
