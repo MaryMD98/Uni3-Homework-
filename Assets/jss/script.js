@@ -54,11 +54,54 @@ function generatePassword(){
   }
 
   //check if everything is selected
+  //first random will choose between 0 - 0 if everything is selected
+  // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
   if(specialChar && numChar && lowercaseChar && uppercaseChar){
 
   }
 
-  //first random will chose between 
+  //check if lower or uppercase, if false on both only display nonaalphabet num
+  // if true and true
+  if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
+   
+      if(specialChar && numChar){  // true and true include everthing
+
+      } else if(specialChar && !numChar){ // true and false only include especial char
+
+      } else if(!specialChar && numChar){ // false and true only include numbers
+      
+      } else { // false and false only include letters
+
+      }
+
+  } if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
+   
+    if(specialChar && numChar){  // true and true include everthing
+
+    } else if(specialChar && !numChar){ // true and false only include especial char
+
+    } else if(!specialChar && numChar){ // false and true only include numbers
+    
+    } else { // false and false only include letters
+
+    }
+
+} if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
+   
+  if(specialChar && numChar){  // true and true include everthing
+
+  } else if(specialChar && !numChar){ // true and false only include especial char
+
+  } else if(!specialChar && numChar){ // false and true only include numbers
+  
+  } else { // false and false only include letters
+
+  }
+
+}
+
+  
+
   // create random numbers and between 0 - 57
   // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
   // specialChar , numChar ,  lowercaseChar , uppercaseChar
