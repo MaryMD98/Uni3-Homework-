@@ -7,8 +7,8 @@ var letterString = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
 
 var numberString = ["0","1","2","3","4","5","6","7","8","9"];
 
-var specialChar = ["~","!","@","#","$","%","^","&","*","(",")","-","=",
-                    "+","<",">","?","/","[","]","{","}"];
+var specialCharacter = ["~","!","@","#","$","%","^","&","*","(",")","-","=",
+                        "+","<",">","?","/","[","]","{","}"];
 
 var generateBtn = document.querySelector("#generate");
 var randomStringCreated = "";
@@ -56,74 +56,13 @@ function generatePassword(){
     stringSize = sizeOfPassword;
   }
 
-
-  
-
-
-  //first random will choose between 0 - 0 if everything is selected
-  // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
- 
-  //check if lower or uppercase, if false on both only display nonaalphabet num
-  // if true and true
-  if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
-   
-      if(specialChar && numChar){  // true and true include everthing
-
-      } else if(specialChar && !numChar){ // true and false only include especial char
-
-      } else if(!specialChar && numChar){ // false and true only include numbers
-      
-      } else { // false and false only include letters upper and lower
-
-      }
-
-  } else if(lowercaseChar && !uppercaseChar){ // true and false only include lowercases
-   
-      if(specialChar && numChar){  // true and true include everthing
-
-      } else if(specialChar && !numChar){ // true and false only include especial char
-
-      } else if(!specialChar && numChar){ // false and true only include numbers
-      
-      } else { // false and false only include  lowercase letters
-
-      }
-
-  } else if(!lowercaseChar && uppercaseChar){ // false and true only include uppercase
-      
-      if(specialChar && numChar){  // true and true include everthing
-
-      } else if(specialChar && !numChar){ // true and false only include especial char
-
-      } else if(!specialChar && numChar){ // false and true only include numbers
-      
-      } else { // false and false only include uppercase letters
-
-      }
-
-  } else { // false and false dont include letters
-      
-      if(specialChar && numChar){  // true and true only include specil nd numbers
-
-      } else if(specialChar && !numChar){ // true and false only include especial char
-
-      } else if(!specialChar && numChar){ // false and true only include numbers
-      
-      } else { // false error, dont include anything
-
-      }
-  }
+  return ;
 }
 
   
-      // specialChar  numChar lowercaseChar uppercaseChar
-      // randomOptIndex = 0;
-      // stringRandomIndex = 0;
-  
-
   // first check what string Array to use then check random and a pull letter from string
   // (0)specialChar , (1)numChar ,  (2)lowercaseChar , (3)uppercaseChar
-  // letterString   numberString   specialChar      arrays
+  // letterString   numberString   specialCharacter      arrays
   // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
 function randomOption (){
   randomOptIndex = Math.floor(Math.random() * 3);
@@ -133,15 +72,24 @@ function randomOption (){
     //check if user is true on adding specialchar else run function again
     if(specialChar == true){
       //get another random number to get a letter on the special char array
-      stringRandomIndex = Math.floor(Math.random() * 3);
-      randomStringCreated = randomStringCreated.concat(specialChar[stringRandomIndex]);
-
+      stringRandomIndex = Math.floor(Math.random() * 21);
+      randomStringCreated = randomStringCreated.concat(specialCharacter[stringRandomIndex]);
     } else {
+      // if user did not selected this option run function again
       randomOption();
     }
-
-  }
-  if(randomOptIndex == 1){
+    
+  // add Number character to string
+  } else if(randomOptIndex == 1){
+    //check if user is true on adding numberChar else run function again
+    if(numChar == true){
+      //get another random number to get a letter on the number char array
+      stringRandomIndex = Math.floor(Math.random() * 9);
+      randomStringCreated = randomStringCreated.concat(numberString[stringRandomIndex]);
+    } else {
+      // if user did not selected this option run function again
+      randomOption();
+    }
 
   }
   if(randomOptIndex == 2){
@@ -151,47 +99,6 @@ function randomOption (){
 
   }
 }
-
   
-  // 4 different functions depending on user entry
-  // true and true only include specil nd numbers
-  function specialANDnumchar (){
-
-    if(lowercaseChar && uppercaseChar){ // true on upper and lowercase letters
-    } else if(lowercaseChar && !uppercaseChar){ // true and false only include lowercases
-    } else if(!lowercaseChar && uppercaseChar){ // false and true only include uppercase
-    } else { // false and false dont include letters
-    }
-  }
-
-  // true and false only include especial char
-  function specialCharacter (){
-
-  }
-  // false and true only include numbers
-  function numCharacter (){
-
-  }
-  // false and false 
-  function onlyLetters (){
-
-  }
-
-  // create random numbers and between 0 - 57
-  // letters 0-25 , numbers 0-9 , special 0 - 21  total 0-57 
-  // specialChar , numChar ,  lowercaseChar , uppercaseChar
-  randomIndex = Math.floor(Math.random() * 57);
-
-    // specialChar , numChar ,  lowercaseChar , uppercaseChar
-    randomIndex = Math.floor(Math.random() * 57);
-
-      // specialChar , numChar ,  lowercaseChar , uppercaseChar
-  randomIndex = Math.floor(Math.random() * 57);
-
-
-  
-    return 
-  
-
-
+// button with event listener to generate passwrod when pressed
 generateBtn.addEventListener("click", writePassword);
